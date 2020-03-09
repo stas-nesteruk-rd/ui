@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Footable - Responsive Table</title>
+  <meta name="viewport"
+    content="width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no" />
+  <link rel="stylesheet" href="/css/footable.core.css" />
+  <link rel="stylesheet" href="/css/footable.standalone.css" />
+</head>
+
+<body>
+  Page Size:
+  <select id="change-page-size">
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+    <option value="20">20</option>
+  </select>
+  Navigation Size:
+  <select id="change-nav-size">
+    <option value="0">None</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+  Filter
+  <input id="filter" type="text">
+  <table class="table footable" data-filter="#filter" data-filter-text-only="true" data-page-size="5">
+    <thead>
+      <tr>
+        <th data-type="numeric">#</th>
+        <th data-sort-ignore="true">Image</th>
+        <th>Name</th>
+        <th data-hide="phone,tablet">Category</th>
+        <th data-hide="phone,tablet">Producer</th>
+        <th data-hide="phone,tablet">Description</th>
+        <th data-type="numeric">Count</th>
+        <th data-type="numeric">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each products}}
+      <tr>
+        <th scope="row" id="product{{this._id}}" class="item">{{this.number}}</th>
+        <td class="text-center"><img class="small" src="{{this.image}}" style="width: 50; height: 50px;"></td>
+        <td class="name">{{this.name}}</td>
+        <td class="category">{{this.category.name}}</td>
+        <td class="producer">{{this.producer.name}}</td>
+        <td class="description">{{this.description}}</td>
+
+        <td class="count">{{this.count}}</td>
+
+        <td class="price">{{this.price}}</td>
+      </tr>
+      {{/each}}
+
+    </tbody>
+    <tfoot class="hide-if-no-paging">
+    <tr>
+      <td colspan="8">
+        <div class="pagination pagination-centered"></div>
+      </td>
+    </tr>
+  </tfoot>
+  </table>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="/js/footable.js"></script>
+  <script type="text/javascript" src="/js/footable.sort.js"></script>
+  <script type="text/javascript" src="/js/footable.filter.js"></script>
+  <script type="text/javascript" src="/js/footable.paginate.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $('.footable').footable();
+      $('#change-page-size').change(function (e) {
+						e.preventDefault();
+						var pageSize = $(this).val();
+						$('.footable').data('page-size', pageSize);
+						$('.footable').trigger('footable_initialized');
+					});
+
+					$('#change-nav-size').change(function (e) {
+						e.preventDefault();
+						var navSize = $(this).val();
+						$('.footable').data('limit-navigation', navSize);
+						$('.footable').trigger('footable_initialized');
+					});
+    });
+  </script>
+</body>
+
+</html>

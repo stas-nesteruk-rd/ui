@@ -1,0 +1,44 @@
+<div id="productList">
+    <div class="row">
+        {{#each products}}
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div id="product{{this._id}}" class="panel panel-default product">
+                <div class="panel-body">
+                    <div class="thumbnail">
+                        <img src="{{this.image}}" alt="{{this.description}}">
+                        <div class="desc">
+                            <div class="cell">
+                                <p class="description text-center">{{this.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="name">{{this.name}}</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <small>Category:</small>
+                            <span class="category">{{this.category.name}}</span></li>
+                        <li class="list-group-item">
+                            <small>Producer:</small>
+                            <span class="producer">{{this.producer.name}}</span></li>
+                        <li class="list-group-item">
+                            <small>Count:</small>
+                            <span class="count">{{this.count}}</span></li>
+                    </ul>
+                    <div class="price"><span>$</span>{{this.price}}</div>
+
+                    {{#if ../edit }}
+                    <a href="/delete?id={{this._id}}" class="btn btn-default pull-right"
+                        data-id-product="{{this._id}}">Delete</a>
+
+                    <a href="/edit?id={{this._id}}" class="btn btn-default pull-right" data-id-product="{{this._id}}"
+                        data-command="EDIT"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit</a>
+                    {{/if}}
+                    <a href='/api/products/{{this._id}}' class="btn btn-default pull-right info-btn"
+                        data-id-product="{{this._id}}">Info</a>
+                    <a class="btn btn-default pull-right buy-btn" data-id-product="{{this._id}}">Buy</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

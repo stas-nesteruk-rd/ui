@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Shop</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/footable.core.css" />
+    <link rel="stylesheet" href="/css/footable.standalone.css" />
+</head>
+
+<body>
+    {{>header}}
+
+    <div id="dashboard" class="container">
+        <div class="row">
+            <div class="col">
+                <!-- tabs left -->
+                <div id='main-tabs' class="tabbable tabs-left">
+                    <ul class="nav nav-tabs">
+                        <li class="active tab-1"><a href="#category" data-toggle="tab">Category</a></li>
+                        <li class="tab-2"><a href="#producer" data-toggle="tab">Producer</a></li>
+                        <li class="tab-3"><a href="#product" data-toggle="tab">Product</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="category">
+                            <div class="col-md-10">
+                                <div class="tabbable">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active tab-1"><a href="#category-add" data-toggle="tab">Add</a></li>
+                                        <li class="tab-2"><a href="#category-edit" data-toggle="tab">Edit</a></li>
+                                        <li class="tab-3"><a href="#category-delete" data-toggle="tab">Delete</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane active tab-1" id="category-add">
+                                            <div class="col-md-6 add-category">
+                                                <div class="input-group">
+                                                    <input name="category" type="text" class="form-control"
+                                                        placeholder="A new category name">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default" type="button">Add</button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="category-edit">
+                                            <div class="edit-category">
+                                                <div class="input-group">
+                                                    <select name="category" type="text"
+                                                        class="input-group-addon form-control edit-select-category">
+                                                    </select><input name='category' type="text"
+                                                        class="form-control edit-input-category"
+                                                        placeholder="A new category name">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default edit-btn-category"
+                                                            type="button">Edit</button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="category-delete">
+                                            <div class="delete-category">
+                                                <div class="input-group">
+                                                    <select name="category" type="text"
+                                                        class="input-group-addon form-control delete-select-category">
+                                                    </select>
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default delete-btn-category"
+                                                            type="button">Delete</button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="producer">
+                            <div class="col-md-10">
+                                <div class="tabbable">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active tab-1"><a href="#producer-add" data-toggle="tab">Add</a></li>
+                                        <li class="tab-2"><a href="#producer-edit"  data-toggle="tab">Edit</a></li>
+                                        <li class="tab-3"><a href="#producer-delete"  data-toggle="tab">Delete</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="producer-add">
+                                            <div class="col-md-6 add-producer">
+                                                <div class="input-group">
+                                                    <input name="producer" type="text" class="form-control"
+                                                        placeholder="A new producer name">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default" type="button">Add</button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="producer-edit">
+                                            <div class="edit-producer">
+                                                <div class="input-group">
+                                                    <select name="producer" type="text"
+                                                        class="input-group-addon form-control edit-select-producer">
+                                                    </select><input name='producer' type="text"
+                                                        class="form-control edit-input-producer"
+                                                        placeholder="A new producer name">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default edit-btn-producer"
+                                                            type="button">Edit</button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="producer-delete">
+                                            <div class="delete-producer">
+                                                <div class="input-group">
+                                                    <select name="producer" type="text"
+                                                        class="input-group-addon form-control delete-select-producer">
+                                                        <option>Male</option>
+                                                        <option>Female</option>
+                                                    </select>
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default delete-btn-producer"
+                                                            type="button">Delete</button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="product">
+                            <div class="col-md-10">
+                                <div class="tabbable">
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-tabs-item active tab-1"><a href="#product-add" data-toggle="tab">Add</a></li>
+                                        <li class="nav-tabs-item tab-2"><a href="#products-list" data-toggle="tab" >Products</a></li>
+                                        <li class="nav-tabs-item tab-3"><a href="#product-edit" data-toggle="tab">Edit</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane active tab-1" id="product-add">
+                                            <div class="row add-product">
+                                                <form id='form-add-product' method="post" action=""
+                                                    class="form-add-product" enctype="multipart/form-data">
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <input name="nameProduct" class="form-control name-product"
+                                                            type="text" placeholder="Product name" />
+                                                        <div class="list-group">
+
+                                                            <select path="nameCategory"
+                                                                class="form-control name-category" type="text">
+                                                            </select>
+
+                                                            <select path="nameProducer"
+                                                                class="form-control name-producer" type="text">
+                                                                <select>
+
+                                                                    <input type="number" path="namePrice"
+                                                                        class="list-group-item form-control name-price"
+                                                                        placeholder="Price" min="1" />
+
+                                                                    <input type="number" path="nameCount"
+                                                                        class="list-group-item form-control name-count"
+                                                                        placeholder="Count" min="0" />
+                                                        </div>
+                                                        <div class="list-group">
+
+                                                            <textarea path="nameDescription"
+                                                                class="list-group-item form-control name-description"
+                                                                placeholder="Description" rows="2"
+                                                                type="text"></textarea>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary" value="Upload">Add
+                                                            Product</button>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <div class="thumbnail image-preview" id="image-preview">
+                                                            <img class="product-image" src=""
+                                                                style="width: 200px;height: 200px;"
+                                                                alt="Product preview">
+                                                            <span class="image-preview-default-text">Image
+                                                                preview</span>
+                                                        </div>
+                                                        <label class="input-group btn btn-primary">
+                                                            <input path="image" type='file' id="add-product-image"
+                                                                style="display:none"
+                                                                onchange="$('#image-name').html(this.files[0].name)"
+                                                                value="Upload" />
+                                                            Choose an image
+                                                        </label>
+                                                        <span class='label label-info' id="image-name"></span>
+                                                    </div>
+                                                    <br>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane tab-2" id="products-list">
+                                            Page Size:
+                                            <select id="change-page-size">
+                                                <option value="5">5</option>
+                                                <option value="10">10</option>
+                                                <option value="15">15</option>
+                                                <option value="20">20</option>
+                                            </select>
+                                            Navigation Size:
+                                            <select id="change-nav-size">
+                                                <option value="0">None</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                            Filter
+                                            <input id="filter" type="text">
+                                            <table class="table footable" data-filter="#filter"
+                                                data-filter-text-only="true" data-page-size="5">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-type="numeric">#</th>
+                                                        <th data-sort-ignore="true">Image</th>
+                                                        <th>Name</th>
+                                                        <th data-hide="phone,tablet">Category</th>
+                                                        <th data-hide="phone,tablet">Producer</th>
+                                                        <th data-hide="phone,tablet">Description</th>
+                                                        <th data-type="numeric">Count</th>
+                                                        <th data-type="numeric">Price</th>
+                                                        <th data-sort-ignore="true">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {{#each products}}
+                                                    <tr>
+                                                        <td scope="row" class="item"
+                                                            style="width: 50px;">
+                                                            {{this.number}}</td>
+                                                        <td class="text-center"><img class="small" src="{{this.image}}"
+                                                                style="width: 50; height: 50px;"></td>
+                                                        <td class="name">{{this.name}}</td>
+                                                        <td class="category" style="width: 100px;">
+                                                            {{this.category.name}}</td>
+                                                        <td class="producer" style="width: 100px;">
+                                                            {{this.producer.name}}</td>
+                                                        <td class="description">{{this.description}}</td>
+
+                                                        <td class="count" style="width: 80px;">{{this.count}}</td>
+                                                        <td class="price" style="width: 80px;">{{this.price}}</td>
+                                                        <td style="width: 70px;">
+                                                            <div class="btn-group btn-group-xs" role="group"
+                                                                style="display: inline;"><button type="button"
+                                                                    class="btn btn-default products-list-edit-btn" data-id-product="{{this._id}}"><span
+                                                                        class="glyphicon glyphicon-pencil"
+                                                                        aria-hidden="true"></span></button> <button
+                                                                    type="button" class="btn btn-default products-list-del-btn" data-id-product="{{this._id}}"><span
+                                                                        class="glyphicon glyphicon-trash"
+                                                                        aria-hidden="true"></span></button></div>
+                                                        </td>
+                                                    </tr>
+                                                    {{/each}}
+
+                                                </tbody>
+                                                <tfoot class="hide-if-no-paging">
+                                                    <tr>
+                                                        <td colspan="9">
+                                                            <div class="pagination pagination-centered"></div>
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane tab-3" id="product-edit">
+                                            <div class="row edit-product">
+                                                <form id='form-edit-product' method="post" action=""
+                                                    class="form-edit-product" enctype="multipart/form-data">
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <input name="nameProduct" class="form-control product-name"
+                                                            type="text" placeholder="Product name" />
+                                                        <div class="list-group">
+
+                                                            <select path="nameCategory"
+                                                                class="form-control name-category" type="text">
+                                                            </select>
+
+                                                            <select path="nameProducer"
+                                                                class="form-control name-producer" type="text">
+                                                                <select>
+
+                                                                    <input type="number" path="namePrice"
+                                                                        class="list-group-item form-control product-price"
+                                                                        placeholder="Price" min="1" />
+
+                                                                    <input type="number" path="nameCount"
+                                                                        class="list-group-item form-control product-count"
+                                                                        placeholder="Count" min="0" />
+                                                        </div>
+                                                        <div class="list-group">
+
+                                                            <textarea path="nameDescription"
+                                                                class="list-group-item form-control product-description"
+                                                                placeholder="Description" rows="2"
+                                                                type="text"></textarea>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary" value="Upload">Save
+                                                            Product</button>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <div class="thumbnail image-preview" id="image-preview">
+                                                            <img class="product-image" src=""
+                                                                style="width: 200px;height: 200px;"
+                                                                alt="Product preview">
+                                                            <span class="image-preview-default-text">Image
+                                                                preview</span>
+                                                        </div>
+                                                        <label class="input-group btn btn-primary">
+                                                            <input path="image" type='file' id="edit-product-image"
+                                                                style="display:none"
+                                                                onchange="$('#image-name').html(this.files[0].name)"
+                                                                value="Upload" />
+                                                            Choose an image
+                                                        </label>
+                                                        <span class='label label-info' id="image-name"></span>
+                                                    </div>
+                                                    <br>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /tabs -->
+            </div>
+
+        </div><!-- /row -->
+    </div>
+    {{>footer}}
+
+    <div class="modal fade" id="editor-modal" tabindex="-1" role="dialog" aria-labelledby="editor-title">
+        <style scoped>
+            /* provides a red astrix to denote required fields - this should be included in common stylesheet */
+            .form-group.required .control-label:after {
+                content: "*";
+                color: red;
+                margin-left: 4px;
+            }
+        </style>
+        <div class="modal-dialog" role="document">
+            <form class="modal-content form-horizontal" id="editor">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="editor-title">Add Row</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="number" id="id" name="id" class="hidden" />
+                    <div class="form-group required">
+                        <label for="firstName" class="col-sm-3 control-label">First Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="firstName" name="firstName"
+                                placeholder="First Name" required>
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="lastName" name="lastName"
+                                placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobTitle" class="col-sm-3 control-label">Job Title</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="jobTitle" name="jobTitle"
+                                placeholder="Job Title">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="startedOn" class="col-sm-3 control-label">Started On</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" id="startedOn" name="startedOn"
+                                placeholder="Started On" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob" class="col-sm-3 control-label">Date of Birth</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" id="dob" name="dob" placeholder="Date of Birth">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/shop.js"></script>
+    <script src="/js/footable.js"></script>
+    <script src="/js/footable.sort.js"></script>
+    <script src="/js/footable.filter.js"></script>
+    <script src="/js/footable.paginate.js"></script>    
+    <script type="text/javascript">
+        $(function () {
+            $('.footable').footable();
+            $('#change-page-size').change(function (e) {
+                e.preventDefault();
+                var pageSize = $(this).val();
+                $('.footable').data('page-size', pageSize);
+                $('.footable').trigger('footable_initialized');
+            });
+
+            $('#change-nav-size').change(function (e) {
+                e.preventDefault();
+                var navSize = $(this).val();
+                $('.footable').data('limit-navigation', navSize);
+                $('.footable').trigger('footable_initialized');
+            });
+        });
+    </script>
+</body>
+
+</html>

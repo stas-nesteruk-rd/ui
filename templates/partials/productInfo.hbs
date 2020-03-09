@@ -1,0 +1,47 @@
+<div id="product{{product._id}}" class="row">
+    <div class="col-xs-12 col-sm-4">
+        <div class="panel panel-default product">
+            <div class="panel-body">
+                <div class="thumbnail">
+                    <img src="{{product.image}}">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <h4 class="name">{{product.name}}</h4>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Category:</td>
+                    <td><span class="category">{{product.category.name}}</span></td>
+                </tr>
+                <tr>
+                    <td>Producer:</td>
+                    <td><span class="producer">{{product.producer.name}}</span></td>
+                </tr>
+                <tr>
+                    <td>Producer:</td>
+                    <td><span class="description">{{product.description}}</span></td>
+                </tr>
+                <tr>
+                    <td>Count:</td>
+                    <td><span class="count">{{product.count}}</span></td>
+                </tr>
+                <tr>
+                    <td>Price:</td>
+                    <td><span class="price"><span>$</span> {{product.price}}</span></td>
+                </tr>
+            </tbody>
+        </table>
+        {{#if ../edit }}
+        <a href="/delete?id={{product._id}}" class="btn btn-default pull-right"
+            data-id-product="{{product._id}}">Delete</a>
+
+        <a href="/edit?id={{product._id}}" class="btn btn-default pull-right" data-id-product="{{product._id}}"
+            data-command="EDIT"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit</a>
+        {{/if}}
+        <a class="btn btn-default pull-right buy-btn" data-id-product="{{product._id}}">Buy</a>
+    </div>
+</div>

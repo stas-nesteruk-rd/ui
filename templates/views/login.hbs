@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Shop</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body>
+    {{>header}}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="wrapper">
+                <form action="/api/login" class="form-signin" method="post">
+                    <label>Email</label>
+                    <input name="email" type="Email" class="form-control" value="admin@email.com"/>
+                    <label>Password</label>
+                    <input name="password" type="Password" class="form-control" value="adminpass"/>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" value="submit">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{>footer}}
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/shop.js"></script>
+</body>
+
+</html>

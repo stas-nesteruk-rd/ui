@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Shop</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body>
+    {{>header}}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="wrapper">
+                <form action="/api/signup" class="form-signup" method="post">
+                    <label>Username</label>
+                    <input name="name" type="text" class="form-control" />
+                    <label>Email</label>
+                    <input name="email" type="Email" class="form-control" />
+                    <label>Gender:</label>
+                    <select name="gender" type="text" class="form-control">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                    <label>Password</label>
+                    <input name="password" type="Password" class="form-control" />
+                    <label>Confirm password</label>
+                    <input name="confirmPassword" type="Password" class="form-control" />
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" value="submit">Sign up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{>footer}}
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/shop.js"></script>
+</body>
+
+</html>

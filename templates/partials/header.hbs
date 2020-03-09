@@ -1,0 +1,54 @@
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#shop-navbar"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/api/products">Online store</a>
+            </div>
+            <div class="collapse navbar-collapse" id="shop-navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form action="/api/products/search" class="navbar-form search">
+                            <div id="findProducts" class="form-group">
+                                <input type="text" name="value" class="form-control" placeholder="Search for..."
+                                    value="{{searchQuery}}">
+                            </div>
+                        </form>
+                    </li>
+                    {{#if currentUser}}
+                    <li><a href="/api/me">{{currentUser.user.name}}</a></li>
+                    {{#ifCond currentUser.user.role '===' 'Administrator'}}
+                    <li><a href="/api/dashboard">Dashboard</a></li>
+                    {{/ifCond}}
+                    <li><a href="/api/my-orders">My orders</a></li>
+                    <li><a href="/api/logout">Log out</a></li> 
+                    {{else}}
+                    <li><a href="/api/login">Sign in</a></li>
+                    <li><a href="/api/signup">Sign up</a></li>
+                    {{/if}}
+                    <li id="currentShoppingCart" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="fa fa-shopping-cart" area-hidden="true"></i> Shopping cart(<span
+                                class="total-count-header"></span>)
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu shopping-cart-desc">
+                            Total count: <span class="total-count"></span><br>
+                            <hr class="hr">
+                            Total cost: <span class="total-cost"></span><br>
+                            <hr class="hr">
+                            <a href="/api/shopping-cart" class="btn btn-default btn-block">View cart</a>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</header>
